@@ -1,0 +1,108 @@
+.btn-custom {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  font-family: var(--font-main);
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-normal);
+  cursor: pointer;
+  white-space: nowrap;
+  user-select: none;
+  text-decoration: none;
+  border: 1px solid transparent;
+}
+
+/* Sizes */
+.btn-sm {
+  padding: 0.45rem 0.95rem;
+  font-size: 0.85rem;
+}
+
+.btn-md {
+  padding: 0.75rem 1.45rem;
+  font-size: 0.95rem;
+}
+
+.btn-lg {
+  padding: 0.95rem 1.95rem;
+  font-size: 1.05rem;
+}
+
+/* Primary Variant */
+.btn-primary {
+  background: var(--grad-primary);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.35);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.5);
+  color: #ffffff;
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+/* Secondary Variant */
+.btn-secondary {
+  background: rgba(30, 41, 59, 0.7);
+  color: var(--text-primary);
+  border-color: var(--border-medium);
+  backdrop-filter: blur(8px);
+}
+
+.btn-secondary:hover {
+  background: rgba(51, 65, 85, 0.8);
+  border-color: rgba(59, 130, 246, 0.4);
+  transform: translateY(-2px);
+  color: #ffffff;
+}
+
+/* Outline Variant */
+.btn-outline {
+  background: transparent;
+  color: var(--text-primary);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.btn-outline:hover {
+  border-color: var(--color-accent-blue);
+  background: rgba(59, 130, 246, 0.08);
+  color: var(--text-accent);
+  transform: translateY(-2px);
+}
+
+/* Ghost Variant */
+.btn-ghost {
+  background: transparent;
+  color: var(--text-secondary);
+}
+
+.btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-primary);
+}
+
+.btn-custom:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.btn-icon {
+  flex-shrink: 0;
+  transition: transform var(--transition-fast);
+}
+
+.btn-custom:hover .icon-right {
+  transform: translateX(3px);
+}
+
+.btn-custom:hover .icon-left {
+  transform: translateX(-2px);
+}

@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="avatar-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" />
+      <stop offset="50%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#020617" />
+    </linearGradient>
+    <linearGradient id="accent-stroke" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#818cf8" />
+      <stop offset="100%" stop-color="#c084fc" />
+    </linearGradient>
+    <radialGradient id="avatar-glow" cx="50%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Background circle with outer border glow -->
+  <circle cx="200" cy="200" r="190" fill="url(#avatar-bg)" />
+  <circle cx="200" cy="200" r="185" fill="none" stroke="url(#accent-stroke)" stroke-width="3" opacity="0.8" />
+  <circle cx="200" cy="180" r="140" fill="url(#avatar-glow)" />
+
+  <!-- Code brackets in background -->
+  <text x="70" y="160" fill="#3b82f6" opacity="0.25" font-family="monospace" font-size="64" font-weight="bold">&lt;</text>
+  <text x="310" y="240" fill="#8b5cf6" opacity="0.25" font-family="monospace" font-size="64" font-weight="bold">&gt;/</text>
+
+  <!-- Developer Silhouette / Illustration -->
+  <g fill="#94a3b8">
+    <!-- Head -->
+    <circle cx="200" cy="145" r="52" fill="#e2e8f0" />
+    <!-- Hair / Modern Style -->
+    <path d="M150 140 C150 95, 250 95, 250 140 C240 125, 220 120, 200 120 C180 120, 160 125, 150 140 Z" fill="#1e293b" />
+    <!-- Glasses -->
+    <rect x="165" y="140" width="30" height="18" rx="4" fill="none" stroke="#3b82f6" stroke-width="3" />
+    <rect x="205" y="140" width="30" height="18" rx="4" fill="none" stroke="#3b82f6" stroke-width="3" />
+    <line x1="195" y1="148" x2="205" y2="148" stroke="#3b82f6" stroke-width="3" />
+
+    <!-- Shoulders & Torso -->
+    <path d="M110 320 C110 240, 150 220, 200 220 C250 220, 290 240, 290 320 Z" fill="#334155" />
+    <!-- Hoodie V-neck collar -->
+    <polygon points="180,225 220,225 200,270" fill="#0f172a" />
+    <!-- Monogram badge on chest -->
+    <circle cx="200" cy="295" r="14" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5" />
+    <text x="200" y="300" fill="#38bdf8" font-family="monospace" font-size="12" font-weight="bold" text-anchor="middle">G</text>
+  </g>
+
+  <!-- Glowing status dot: Available for work -->
+  <circle cx="280" cy="270" r="10" fill="#10b981" />
+  <circle cx="280" cy="270" r="15" fill="none" stroke="#10b981" stroke-width="2" opacity="0.6">
+    <animate attributeName="r" values="12;18;12" dur="2.5s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0.8;0;0.8" dur="2.5s" repeatCount="indefinite" />
+  </circle>
+</svg>
