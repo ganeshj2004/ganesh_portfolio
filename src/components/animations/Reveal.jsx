@@ -3,13 +3,13 @@ import { motion, useReducedMotion } from 'framer-motion';
 
 /**
  * Reusable Reveal component powered by Framer Motion
- * Handles scroll-triggered entry animations smoothly with zero layout shift
+ * Handles scroll-triggered entry animations minimally & smoothly with zero lag or layout shift
  */
 export default function Reveal({
   children,
   direction = 'up',
   delay = 0,
-  duration = 0.5,
+  duration = 0.4,
   className = '',
   cascade = false
 }) {
@@ -19,16 +19,17 @@ export default function Reveal({
     return <div className={className}>{children}</div>;
   }
 
+  // Refined minimal displacements for instant, butter-smooth feel
   const getInitialPosition = () => {
     switch (direction) {
       case 'up':
-        return { opacity: 0, y: 35 };
+        return { opacity: 0, y: 18 };
       case 'down':
-        return { opacity: 0, y: -35 };
+        return { opacity: 0, y: -18 };
       case 'left':
-        return { opacity: 0, x: 40 };
+        return { opacity: 0, x: 20 };
       case 'right':
-        return { opacity: 0, x: -40 };
+        return { opacity: 0, x: -20 };
       case 'fade':
       default:
         return { opacity: 0 };
@@ -53,11 +54,11 @@ export default function Reveal({
     <motion.div
       initial={getInitialPosition()}
       whileInView={getTargetPosition()}
-      viewport={{ once: true, amount: 0.15 }}
+      viewport={{ once: true, amount: 0.12 }}
       transition={{
         duration,
         delay,
-        ease: [0.25, 0.1, 0.25, 1.0]
+        ease: [0.22, 1, 0.36, 1]
       }}
       className={className}
     >

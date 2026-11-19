@@ -43,9 +43,10 @@
     justify-content: center;
   }
 
-  .hero-avatar-wrapper {
+  .hero-avatar-wrapper,
+  .hero-portrait-wrapper,
+  .hero-portrait-composition {
     margin: 0 auto;
-    max-width: 320px;
   }
 
   .about-grid {
@@ -83,8 +84,17 @@
   }
 
   .container {
-    padding-left: 1.25rem !important;
-    padding-right: 1.25rem !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    /* Prevent any child from causing horizontal scroll */
+    overflow-x: clip;
+  }
+
+  /* All glass cards must respect container edges */
+  .glass-card {
+    width: 100%;
+    box-sizing: border-box;
+    max-width: 100%;
   }
 
   .hero-title {
@@ -108,8 +118,10 @@
     justify-content: center;
   }
 
-  .hero-avatar-wrapper {
-    max-width: 250px;
+  .hero-avatar-wrapper,
+  .hero-portrait-wrapper,
+  .hero-portrait-composition {
+    margin: 0 auto;
   }
 
   .skills-grid {
@@ -189,3 +201,4 @@
     grid-template-columns: 1fr !important;
   }
 }
+

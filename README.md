@@ -238,3 +238,4 @@ Ensure your updated PDF matches the filename `Ganesh_J_Resume.pdf`, or change th
 ## 📄 License
 
 This portfolio codebase is proprietary and crafted for **Ganesh J**. Open for personal portfolio reference and modification.
+

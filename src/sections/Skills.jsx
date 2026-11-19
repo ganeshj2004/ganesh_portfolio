@@ -26,7 +26,8 @@ import {
   Box,
   FileCode2,
   Wrench,
-  CheckCircle2
+  CheckCircle2,
+  Atom
 } from 'lucide-react';
 import { skillCategories } from '../data/skills';
 import SectionTitle from '../components/common/SectionTitle';
@@ -60,7 +61,8 @@ const iconMap = {
   Binary,
   Box,
   FileCode2,
-  Wrench
+  Wrench,
+  Atom
 };
 
 export default function Skills() {
@@ -107,7 +109,7 @@ export default function Skills() {
                             <SkillIcon size={15} />
                           </div>
                           <span className="skill-name">{skill.name}</span>
-                          <span className="skill-level-tag">{skill.level}</span>
+                          <span className="skill-tag-badge">{skill.tag || skill.level}</span>
                         </div>
                       );
                     })}
@@ -121,3 +123,4 @@ export default function Skills() {
     </section>
   );
 }
+

@@ -4,8 +4,8 @@ export const personalInfo = {
   role: "Full Stack Software Developer",
   subRole: "Specializing in React.js, Node.js & Database Systems",
   location: "Chennai, Tamil Nadu, India",
-  email: "ganesh.developer.contact@gmail.com",
-  phone: "+91 98765 43210",
+  email: "jaisankarganesh156@gmail.com",
+  phone: "+91 63698 01204",
   greeting: "HELLO, I'M GANESH J",
   heroHeading: "Building Digital Experiences Through Code.",
   heroDescription:
@@ -34,5 +34,7 @@ export const personalInfo = {
     linkedin: "https://linkedin.com",
     email: "mailto:ganesh.developer.contact@gmail.com"
   },
-  resumeUrl: "/resume/Ganesh_J_Resume.pdf"
+  resumeUrl: "/resume/Ganesh_J_Resume.pdf",
+  portraitUrl: "/images/profile-hero-sage.png"
 };
+

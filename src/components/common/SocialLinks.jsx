@@ -49,3 +49,4 @@ export default function SocialLinks({ variant = 'default', className = '' }) {
     </div>
   );
 }
+

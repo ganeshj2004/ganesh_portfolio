@@ -1,52 +1,40 @@
-/* Background subtle ambient float */
-@keyframes ambientFloat {
+/* ============================================================
+   Fluid Glass Minimal Animations - Smooth & Hardware Accelerated
+   Uses strictly transform & opacity for zero lag / 60+ FPS
+   ============================================================ */
+
+/* Liquid ambient float 1 (Top Left Fluid Droplet Glow) */
+@keyframes fluidAmbientFloat1 {
   0%, 100% {
-    transform: translate(0, 0) scale(1);
+    transform: translate3d(0, 0, 0) scale(1);
   }
   50% {
-    transform: translate(25px, -20px) scale(1.08);
+    transform: translate3d(24px, -20px, 0) scale(1.06);
   }
 }
 
-@keyframes ambientFloatAlt {
+/* Liquid ambient float 2 (Bottom Right Fluid Droplet Glow) */
+@keyframes fluidAmbientFloat2 {
   0%, 100% {
-    transform: translate(0, 0) scale(1);
+    transform: translate3d(0, 0, 0) scale(1);
   }
   50% {
-    transform: translate(-30px, 20px) scale(1.06);
+    transform: translate3d(-24px, 18px, 0) scale(1.05);
   }
 }
 
-/* Pulse Glow */
-@keyframes pulseGlow {
+/* Liquid ambient float 3 (Center Subtle Seafoam Orb) */
+@keyframes fluidAmbientFloat3 {
   0%, 100% {
-    opacity: 0.35;
-    transform: scale(1);
+    transform: translate3d(0, 0, 0) scale(1);
   }
   50% {
-    opacity: 0.65;
-    transform: scale(1.04);
+    transform: translate3d(15px, 20px, 0) scale(1.04);
   }
 }
 
-/* Beacon Ping */
-@keyframes beaconPing {
-  0% {
-    transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
-  }
-  70% {
-    transform: scale(1);
-    box-shadow: 0 0 0 10px rgba(16, 185, 129, 0);
-  }
-  100% {
-    transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
-  }
-}
-
-/* Shimmer Light */
-@keyframes shimmerWave {
+/* Soft glass specular sheen */
+@keyframes glassSheen {
   0% {
     background-position: -200% 0;
   }
@@ -55,23 +43,47 @@
   }
 }
 
-/* Subtle line glow pulse */
-@keyframes lineGlow {
-  0%, 100% {
-    opacity: 0.4;
+/* Status Beacon Ping (Emerald Mint) */
+@keyframes beaconPingMint {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(45, 212, 191, 0.7);
   }
-  50% {
-    opacity: 0.9;
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 8px rgba(45, 212, 191, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(45, 212, 191, 0);
   }
 }
 
+/* Subtle Glass Card Glow on Hover */
+@keyframes softPulseGlow {
+  0%, 100% {
+    opacity: 0.35;
+    transform: scale3d(1, 1, 1);
+  }
+  50% {
+    opacity: 0.65;
+    transform: scale3d(1.03, 1.03, 1);
+  }
+}
+
+/* Animation Helper Classes */
 .anim-float-1 {
-  animation: ambientFloat 14s ease-in-out infinite;
+  animation: fluidAmbientFloat1 18s ease-in-out infinite;
   will-change: transform;
 }
 
 .anim-float-2 {
-  animation: ambientFloatAlt 18s ease-in-out infinite;
+  animation: fluidAmbientFloat2 22s ease-in-out infinite;
+  will-change: transform;
+}
+
+.anim-float-3 {
+  animation: fluidAmbientFloat3 20s ease-in-out infinite;
   will-change: transform;
 }
 
@@ -80,11 +92,12 @@
   width: 9px;
   height: 9px;
   border-radius: 50%;
-  background-color: var(--color-accent-emerald);
-  animation: beaconPing 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+  background-color: var(--color-accent-mint);
+  animation: beaconPingMint 2.2s cubic-bezier(0, 0, 0.2, 1) infinite;
+  will-change: transform;
 }
 
-/* Respect reduced motion */
+/* Respect reduced motion (zero lag / instant display for those who prefer it) */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

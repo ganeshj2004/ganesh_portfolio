@@ -31,9 +31,16 @@ export default function Education() {
                   </div>
 
                   <div className="education-title-group">
-                    <div className="education-score-badge">
-                      <Award size={13} />
-                      <span>{item.score}</span>
+                    <div className="education-badges-row">
+                      <div className="education-score-badge">
+                        <Award size={13} />
+                        <span>{item.score}</span>
+                      </div>
+                      {item.stream && (
+                        <span className="education-stream-badge">
+                          {item.stream}
+                        </span>
+                      )}
                     </div>
                     <h3 className="education-degree">{item.degree}</h3>
                     <p className="education-institution">{item.institution}</p>
@@ -77,3 +84,4 @@ export default function Education() {
     </section>
   );
 }
+

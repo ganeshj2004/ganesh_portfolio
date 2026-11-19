@@ -1,41 +1,46 @@
 import { useState, useEffect } from 'react';
 
 /**
- * Custom hook to track active section based on scroll position using IntersectionObserver
- * @param {string[]} sectionIds - Array of section ID strings without the '#'
- * @param {number} offsetRatio - Intersection threshold or viewport offset
+ * Optimized useActiveSection hook using IntersectionObserver
+ * Completely eliminates layout thrashing (no window.scrollY or element.offsetTop on scroll).
  */
-export function useActiveSection(sectionIds, offsetRatio = 0.3) {
+export function useActiveSection(sectionIds) {
   const [activeSection, setActiveSection] = useState(sectionIds[0] || 'hero');
 
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY + 140;
+    if (!sectionIds || sectionIds.length === 0) return;
 
-      // Check each section position
-      for (let i = sectionIds.length - 1; i >= 0; i--) {
-        const id = sectionIds[i];
-        const element = document.getElementById(id);
-        if (element) {
-          const top = element.offsetTop;
-          if (scrollPosition >= top) {
+    const visibleMap = new Map();
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          visibleMap.set(entry.target.id, entry.isIntersecting);
+        });
+
+        // Find the first visible section in document order
+        for (const id of sectionIds) {
+          if (visibleMap.get(id)) {
             setActiveSection(id);
-            return;
+            break;
           }
         }
+      },
+      {
+        rootMargin: '-20% 0px -60% 0px',
+        threshold: 0,
       }
-      if (sectionIds.length > 0) {
-        setActiveSection(sectionIds[0]);
-      }
-    };
+    );
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll(); // Initial check
+    sectionIds.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
 
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    return () => observer.disconnect();
   }, [sectionIds]);
 
   return activeSection;
 }
+
+

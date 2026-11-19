@@ -1,9 +1,25 @@
-import React from 'react';
-import { CheckCircle2, Award, Sparkles, Layers, ShieldCheck, Database, Code } from 'lucide-react';
+import React, { useRef } from 'react';
+import { CheckCircle2, Layers, ShieldCheck, Database } from 'lucide-react';
+import { useInView } from 'framer-motion';
 import { personalInfo } from '../data/personalInfo';
 import SectionTitle from '../components/common/SectionTitle';
 import Reveal from '../components/animations/Reveal';
+import { useCountUp } from '../hooks/useCountUp';
 import './About.css';
+
+/* Individual animated stat card */
+function StatCard({ stat }) {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: '-60px' });
+  const animated = useCountUp(stat.value, inView, 1800);
+
+  return (
+    <div ref={ref} className="stat-card glass-card">
+      <span className="stat-value">{animated}</span>
+      <span className="stat-label">{stat.label}</span>
+    </div>
+  );
+}
 
 export default function About() {
   return (
@@ -23,7 +39,7 @@ export default function About() {
                 <h3 className="about-bio-title">
                   Turning Complex Logic into Seamless Web Architecture
                 </h3>
-                
+
                 {personalInfo.aboutBio.map((paragraph, index) => (
                   <p key={index} className="about-bio-paragraph">
                     {paragraph}
@@ -45,15 +61,12 @@ export default function About() {
             </Reveal>
           </div>
 
-          {/* Right Column: Key Stats & Focus Pillars */}
+          {/* Right Column: Animated Stats & Pillars */}
           <div className="about-stats-col">
             <Reveal direction="up" delay={0.2}>
               <div className="about-stats-grid">
                 {personalInfo.stats.map((stat, index) => (
-                  <div key={index} className="stat-card glass-card">
-                    <span className="stat-value">{stat.value}</span>
-                    <span className="stat-label">{stat.label}</span>
-                  </div>
+                  <StatCard key={index} stat={stat} />
                 ))}
               </div>
             </Reveal>

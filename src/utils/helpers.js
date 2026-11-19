@@ -22,3 +22,4 @@ export function scrollToSection(sectionId) {
 export function getCurrentYear() {
   return new Date().getFullYear();
 }
+

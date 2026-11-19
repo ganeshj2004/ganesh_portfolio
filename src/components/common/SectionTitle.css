@@ -14,22 +14,25 @@
 }
 
 .section-tag-wrapper {
-  margin-bottom: 1rem;
+  margin-bottom: 1.15rem;
 }
 
 .section-badge-code {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.55rem;
   font-family: var(--font-mono);
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--color-accent-blue);
-  background: rgba(59, 130, 246, 0.08);
-  border: 1px solid rgba(59, 130, 246, 0.2);
-  padding: 0.35rem 0.95rem;
+  color: var(--color-accent-mint);
+  background: rgba(45, 212, 191, 0.08);
+  border: 1px solid rgba(45, 212, 191, 0.25);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.15), 0 0 15px rgba(45, 212, 191, 0.1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 0.4rem 1rem;
   border-radius: var(--radius-full);
 }
 
@@ -37,8 +40,8 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--color-accent-blue);
-  box-shadow: 0 0 8px var(--color-accent-blue);
+  background: var(--color-accent-mint);
+  box-shadow: 0 0 10px var(--color-accent-mint);
 }
 
 .section-main-heading {
@@ -47,6 +50,7 @@
   margin-bottom: 1rem;
   font-weight: 800;
   letter-spacing: -0.03em;
+  line-height: 1.2;
 }
 
 .section-subtitle-text {

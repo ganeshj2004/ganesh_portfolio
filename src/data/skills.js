@@ -5,10 +5,10 @@ export const skillCategories = [
     iconName: "Code2",
     description: "Core languages used for building software and solving complex logic.",
     skills: [
-      { name: "JavaScript", level: "Advanced", icon: "FileCode2" },
-      { name: "Python", level: "Proficient", icon: "Terminal" },
-      { name: "Java", level: "Intermediate", icon: "Coffee" },
-      { name: "SQL", level: "Advanced", icon: "Database" }
+      { name: "JavaScript", tag: "ES6+ / Modern", icon: "FileCode2" },
+      { name: "Python", tag: "Scripting / Logic", icon: "Terminal" },
+      { name: "Java", tag: "Core / OOP", icon: "Coffee" },
+      { name: "SQL", tag: "Queries & DDL", icon: "Database" }
     ]
   },
   {
@@ -17,11 +17,11 @@ export const skillCategories = [
     iconName: "Layout",
     description: "Creating responsive, component-driven, and accessible user interfaces.",
     skills: [
-      { name: "React.js", level: "Advanced", icon: "Atom" },
-      { name: "HTML5", level: "Advanced", icon: "Code" },
-      { name: "CSS3", level: "Advanced", icon: "Palette" },
-      { name: "Bootstrap 5", level: "Proficient", icon: "Layers" },
-      { name: "Redux (Basics)", level: "Working Knowledge", icon: "Cpu" }
+      { name: "React.js", tag: "Hooks & SPA", icon: "Atom" },
+      { name: "HTML5", tag: "Semantic Web", icon: "Code" },
+      { name: "CSS3", tag: "Flexbox & Grid", icon: "Palette" },
+      { name: "Bootstrap 5", tag: "Responsive UI", icon: "Layers" },
+      { name: "Redux", tag: "State Mgmt", icon: "Cpu" }
     ]
   },
   {
@@ -30,10 +30,10 @@ export const skillCategories = [
     iconName: "Server",
     description: "Architecting RESTful services, middleware, and secure authentication.",
     skills: [
-      { name: "Node.js", level: "Advanced", icon: "Server" },
-      { name: "Express.js", level: "Advanced", icon: "Network" },
-      { name: "REST APIs", level: "Advanced", icon: "Webhook" },
-      { name: "JWT Authentication", level: "Proficient", icon: "Key" }
+      { name: "Node.js", tag: "Runtime & I/O", icon: "Server" },
+      { name: "Express.js", tag: "REST Middleware", icon: "Network" },
+      { name: "REST APIs", tag: "CRUD Services", icon: "Webhook" },
+      { name: "JWT Authentication", tag: "Auth & Security", icon: "Key" }
     ]
   },
   {
@@ -42,10 +42,10 @@ export const skillCategories = [
     iconName: "Database",
     description: "Data modeling, relational integrity, and high-performance querying.",
     skills: [
-      { name: "MySQL", level: "Advanced", icon: "Database" },
-      { name: "PostgreSQL", level: "Proficient", icon: "Table2" },
-      { name: "Stored Procedures", level: "Proficient", icon: "FileSpreadsheet" },
-      { name: "Query Optimization", level: "Proficient", icon: "Zap" }
+      { name: "MySQL", tag: "RDBMS", icon: "Database" },
+      { name: "PostgreSQL", tag: "Relational DB", icon: "Table2" },
+      { name: "Stored Procedures", tag: "DB Logic", icon: "FileSpreadsheet" },
+      { name: "Query Optimization", tag: "35% Speedup", icon: "Zap" }
     ]
   },
   {
@@ -54,10 +54,10 @@ export const skillCategories = [
     iconName: "Wrench",
     description: "Development workflows, versioning, debugging, and API testing tools.",
     skills: [
-      { name: "Git", level: "Proficient", icon: "GitBranch" },
-      { name: "GitHub", level: "Proficient", icon: "Github" },
-      { name: "Postman", level: "Proficient", icon: "Send" },
-      { name: "VS Code", level: "Advanced", icon: "TerminalSquare" }
+      { name: "Git", tag: "Version Control", icon: "GitBranch" },
+      { name: "GitHub", tag: "Remote & PRs", icon: "Github" },
+      { name: "Postman", tag: "API Testing", icon: "Send" },
+      { name: "VS Code", tag: "Primary IDE", icon: "TerminalSquare" }
     ]
   },
   {
@@ -66,10 +66,12 @@ export const skillCategories = [
     iconName: "Cpu",
     description: "Architectural principles, system design patterns, and engineering paradigms.",
     skills: [
-      { name: "MVC Architecture", level: "Proficient", icon: "Workflow" },
-      { name: "Role-Based Access (RBAC)", level: "Proficient", icon: "ShieldCheck" },
-      { name: "Data Structures", level: "Proficient", icon: "Binary" },
-      { name: "Object-Oriented (OOP)", level: "Proficient", icon: "Box" }
+      { name: "MVC Architecture", tag: "Design Pattern", icon: "Workflow" },
+      { name: "Role-Based Access (RBAC)", tag: "Security", icon: "ShieldCheck" },
+      { name: "Data Structures", tag: "Algorithms", icon: "Binary" },
+      { name: "Object-Oriented (OOP)", tag: "Clean Code", icon: "Box" }
     ]
   }
 ];
+
+

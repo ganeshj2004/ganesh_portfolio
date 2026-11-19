@@ -36,3 +36,4 @@ export const experiences = [
     technologies: ["Python", "PostgreSQL", "JavaScript", "HTML5", "CSS3", "RBAC", "Responsive Design"]
   }
 ];
+
